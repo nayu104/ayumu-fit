@@ -1,4 +1,4 @@
-# ayumu_fit
+# ayumu_fit(あゆーむフィット)
 
 FVM + Flutter（Riverpod）構成のアプリ。  
 歩数・距離トラッキングを中心とした、ダイエット継続支援系プロジェクトです。
