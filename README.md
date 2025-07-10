@@ -1,16 +1,112 @@
-# ayumu_fit
+## AIに生成させたUIイメージ：
+<img src="https://github.com/user-attachments/assets/c3a4b08a-c371-4efe-9ba5-e021e9eb94cb" width="300" />
+<img src="https://github.com/user-attachments/assets/45290bf1-ca45-4b18-8eb4-c1d046ad4892" width="300" />
+<img src="https://github.com/user-attachments/assets/a8da132c-d5cc-4009-92da-4555275f6748" width="300" />
 
-A new Flutter project.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+# 🏃‍♂️ 活動記録アプリ：構成まとめ
 
-A few resources to get you started if this is your first Flutter project:
+---
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 🏠 活動記録画面（ホーム）
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 🎯 目的
+
+* 毎日の**歩数・距離・カロリー**を「記録・表示・継続」
+
+### 📦 機能構成
+
+| 機能           | 内容                                           |
+| ------------ | -------------------------------------------- |
+| 歩数・距離・カロリー表示 | `pedometer`, `geolocator` などで取得しリアルタイム表示     |
+| プログレスバー      | 設定した目標に対する進捗を視覚化（LinearProgressBarなど）        |
+| 今日の活動履歴      | 日時ごとの記録をリスト表示（10:00: 1.2km / 14:00: 0.6kmなど） |
+| リマインダー通知     | 一定時間活動がないと通知（`flutter_local_notifications`）  |
+
+---
+
+## 👤 プロフィール画面
+
+### 🎯 目的
+
+* アカウント情報と公開範囲の管理
+
+### 📦 機能構成
+
+| 機能               | 内容                              |
+| ---------------- | ------------------------------- |
+| ログイン/サインアップ      | Supabase Auth（メール・パスワード認証）      |
+| 名前・アイコン編集        | Supabase Storageでプロフィール画像を保存・更新 |
+| プライベートモード        | 自分の記録を他ユーザーに見せるかどうか切り替え         |
+| フレンド申請/承認機能（拡張案） | 将来的にフレンドとつながる機能（ランキング・比較に活用）    |
+
+---
+
+## 📊 グラフ画面
+
+### 🎯 目的
+
+* 活動履歴を**時系列で見える化**し、モチベーション維持へ
+
+### 📦 機能構成
+
+| 機能          | 内容                            |
+| ----------- | ----------------------------- |
+| 日別・週別・月別グラフ | `fl_chart`で歩数・距離・カロリーの時系列表示   |
+| 過去データの分析    | Supabaseに集計クエリを投げ、合計/平均などを描画  |
+| ランキング切替     | 自分のデータと上位ユーザーを比較グラフで表示（オプション） |
+| 距離計算方法切替    | 歩幅計算（身長×歩数） or GPSベースで選択可     |
+
+---
+
+## 🧠 数学的活用（微積・線形代数）
+
+| 用途               | 数学的処理                        | 意味                      |
+| ---------------- | ---------------------------- | ----------------------- |
+| 日ごとの距離・カロリー変化    | 差分計算（近似微分）                   | 「昨日より＋0.5km」など変化の分析     |
+| 移動スピードのグラフ化      | `(距離n - 距離n-1) / 時間差`        | 加速・減速を可視化               |
+| 歩行の勢い・傾きを色で表現    | 傾きの1次近似（Linear Regressionなど） | 「勢いがある」「停滞している」などの演出    |
+| 累積カロリーの積み上げ表示    | 日々の合計（積分的な累積）                | 「今週の消費は3200kcal」など      |
+| グラフ下部の塗り潰し（積分表現） | `AreaChart` + fill           | 直感的に「たまってきた感」を強調        |
+| 目標との差の面積強調       | ∫（理論値 vs 実データの比較）            | 「あと○○kcal足りない！」のフィードバック |
+
+---
+
+## 🚀 今後の展開案　ゲーミフィケーション
+
+| 拡張要素       | 内容                                     |
+| ---------- | -------------------------------------- |
+| キャラ成長      | 目標達成に応じてアバターが成長。ゲーミフィケーションで継続力UP       |
+| バッジシステム    | 連続達成・累積値に応じて称号を付与。ユーザーのモチベーション向上       |
+| グローバルランキング | SQL（Supabase）で歩数ランキングを算出し、他人と比較可能にする機能 |
+
+## 🆕 📢 実績投稿機能（Achievement Share）
+ユーザーが1日で 1km以上移動した場合に、「実績名」と「任意のメッセージ」を投稿できるSNS風機能。
+達成感の可視化と共有により、継続的なモチベーションを引き出します。
+
+
+---
+
+## 🔧 技術スタック & 補足
+
+| 項目     | 内容                                                                 |
+| ------ | ------------------------------------------------------------------ |
+| DB設計   | Supabase（PostgreSQL）で `users`, `records`, `goals`, `badges` テーブル構築 |
+| 状態管理   | `Riverpod`（Providerでも可）                                            |
+| ローカル保存 | `shared_preferences`, `hive` などで一時保存                               |
+| グラフ描画  | `fl_chart` を用いたLineChart, BarChart, AreaChartの活用                   |
+| 通知機能   | `flutter_local_notifications` によるリマインダー                            |
+
+---
+
+## 🛠️ 実装ステップ（MVP）
+
+1. ✅ 歩数・距離取得（pedometer + geolocator）
+2. ✅ Supabase連携（ログイン、記録保存）
+3. ✅ グラフ画面構築（fl\_chart）
+4. ✅ プロフィール画面の作成（認証・画像アップロード）
+5. ✅ 通知機能テスト（リマインダー送信）
+
+---
+
