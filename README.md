@@ -80,10 +80,6 @@
 5. ローカル通知（通知テスト）
 
 ## AIに生成させたUIイメージ：
-<img width="2048" height="2048" alt="Gemini_Generated_Image_3j3j7p3j3j7p3j3j" src="https://github.com/user-attachments/assets/c3a4b08a-c371-4efe-9ba5-e021e9eb94cb" />
-<img width="2048" height="2048" alt="Gemini_Generated_Image_3j3j7p3j3j7p3j3j (1)" src="https://github.com/user-attachments/assets/45290bf1-ca45-4b18-8eb4-c1d046ad4892" />
-<img width="2048" height="2048" alt="Gemini_Generated_Image_3j3j7p3j3j7p3j3j (2)" src="https://github.com/user-attachments/assets/a8da132c-d5cc-4009-92da-4555275f6748" />
-
----
-
-
+<img src="https://github.com/user-attachments/assets/c3a4b08a-c371-4efe-9ba5-e021e9eb94cb" width="500" />
+<img src="https://github.com/user-attachments/assets/45290bf1-ca45-4b18-8eb4-c1d046ad4892" width="500" />
+<img src="https://github.com/user-attachments/assets/a8da132c-d5cc-4009-92da-4555275f6748" width="500" />
