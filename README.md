@@ -4,7 +4,6 @@
 <img src="https://github.com/user-attachments/assets/a8da132c-d5cc-4009-92da-4555275f6748" width="300" />
 
 
----
 
 # 🏃‍♂️ 活動記録アプリ：構成まとめ
 
