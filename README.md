@@ -1,3 +1,8 @@
+## AIに生成させたUIイメージ：
+<img src="https://github.com/user-attachments/assets/c3a4b08a-c371-4efe-9ba5-e021e9eb94cb" width="500" />
+<img src="https://github.com/user-attachments/assets/45290bf1-ca45-4b18-8eb4-c1d046ad4892" width="500" />
+<img src="https://github.com/user-attachments/assets/a8da132c-d5cc-4009-92da-4555275f6748" width="500" />
+
 ## 🏃‍♂️ 活動記録画面（ホーム）
 
 ### ✅ 目的：
@@ -75,11 +80,5 @@
 1. 歩数・距離取得（センサー系の整備）
 2. Supabase連携（ログイン・データ保存）
 3. グラフ画面（fl\_chart導入）
-
 4. プロフィール画面
 5. ローカル通知（通知テスト）
-
-## AIに生成させたUIイメージ：
-<img src="https://github.com/user-attachments/assets/c3a4b08a-c371-4efe-9ba5-e021e9eb94cb" width="500" />
-<img src="https://github.com/user-attachments/assets/45290bf1-ca45-4b18-8eb4-c1d046ad4892" width="500" />
-<img src="https://github.com/user-attachments/assets/a8da132c-d5cc-4009-92da-4555275f6748" width="500" />
