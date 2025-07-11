@@ -94,7 +94,6 @@
 | ------ | ------------------------------------------------------------------ |
 | DB設計   | Supabase（PostgreSQL）で `users`, `records`, `goals`, `badges` テーブル構築 |
 | 状態管理   | `Riverpod`（Providerでも可）                                            |
-| ローカル保存 | `shared_preferences`, `hive` などで一時保存                               |
 | グラフ描画  | `fl_chart` を用いたLineChart, BarChart, AreaChartの活用                   |
 | 通知機能   | `flutter_local_notifications` によるリマインダー                            |
 
