@@ -96,7 +96,7 @@
 | 状態管理   | `Riverpod`（Providerでも可）                                            |
 | グラフ描画  | `fl_chart` を用いたLineChart, BarChart, AreaChartの活用                   |
 | 通知機能   | `flutter_local_notifications` によるリマインダー                            |
-
+|３Ｄキャラ表示|unityを用いて、太った自分と痩せて美化した自分を疑似投影し、危機感を煽る|
 ---
 
 ## 🛠️ 実装ステップ（MVP）
